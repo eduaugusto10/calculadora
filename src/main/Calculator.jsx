@@ -38,6 +38,8 @@ export default class Calculator extends Component {
             if(currentOperation ==='-') values[0] = values[0]-values[1]
             if(currentOperation ==='*') values[0] = values[0]*values[1]
             if(currentOperation ==='/') values[0] = values[0]/values[1]
+            if(currentOperation ==='1/x') values[0] = 1/values[0]
+            if(currentOperation ==='x²') values[0] = values[0]*values[0]
 
             values[1] = 0
             this.setState({
@@ -75,7 +77,9 @@ export default class Calculator extends Component {
         return (
             <div className="calculator">
                 <Display value={this.state.displayValue} />
-                <Button label="AC" click={this.clearMemory} triple />
+                <Button label="AC" click={this.clearMemory} />
+                <Button label="x²" click={this.setOperation} operation />
+                <Button label="1/x" click={this.setOperation} operation />
                 <Button label="/" click={this.setOperation} operation />
                 <Button label="7" click={this.addDigit} />
                 <Button label="8" click={this.addDigit} />
