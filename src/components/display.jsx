@@ -1,17 +1,5 @@
-import React, { Component } from 'react';
-import {
-    Text,
-    Div,
-} from './style'
+import React from 'react';
+import './Display.css'
 
-
-export class Display extends Component {
-    render(){
-    return(
-        <Div>
-            <Text>{this.props.display}</Text>
-        </Div>
-    )}
-}
-
-export default Display;
+export default props =>
+    <div className="display">{props.value}</div>
